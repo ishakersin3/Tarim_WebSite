@@ -1,0 +1,31 @@
+﻿@using EntityLayer
+@model Announcement
+@{
+    ViewData["Title"] = "CreateTeam";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Duyuru Güncelle</h4>
+            <form class="forms-sample" method="post">
+                <input type="hidden" asp-for="AnnouncementId"/>
+                <div class="form-group">
+                    <label>Başlık</label>
+                    <input type="text" asp-for="Title" class="form-control" placeholder="Başlık">
+                </div>
+                <div class="form-group">
+                    <label>Açıklama</label>
+                    <textarea asp-for="Description" placeholder="Açıklama Giriniz" cols="30" rows="5" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Tarih</label>
+                    <input type="date" asp-for="Date" class="form-control" placeholder="Tarih">
+                </div>
+                <button type="submit" class="btn btn-outline-info">Kaydet</button>
+            </form>
+        </div>
+    </div>
+</div>
+

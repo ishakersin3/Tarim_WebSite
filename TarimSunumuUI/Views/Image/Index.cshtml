@@ -1,0 +1,39 @@
+﻿@using EntityLayer
+@model List<Image>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Görsel Listesi</h4>
+            <div class="table-responsive">
+                <a href="/Image/CreateImage" class="btn btn-outline-success">Yeni Görsel Ekle</a>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Title</th>
+                            <th>Sil</th>
+                            <th>Güncelle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var img in Model)
+                        {
+                            <tr>
+                                <td class="py-1"><img src="/MajesticAdmin-Free-Bootstrap-Admin-Template-master/template/images/faces/@img.ImagreUrl" alt="image" /></td>
+                                <td>@img.Title</td>
+                                <td><a href="~/Image/DeleteImage/@img.ImageId" class="btn btn-inverse-danger">Sil</a></td>
+                                <td><a href="~/Image/UpdateImage/@img.ImageId" class="btn btn-behance">Güncelle</a></td>                              
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,3 +1,8 @@
+using BusinessLayer.Abstract;
+using BusinessLayer.Concrete;
+using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete.EntityFrameworkRepository;
+using DataAccessLayer.Contexts;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -23,6 +28,21 @@ namespace TarimSunumuUI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IServiceService, ServiceManager>();
+            services.AddScoped<ITeamService, TeamManager>();
+            services.AddScoped<IAnnouncementService, AnnouncementManager>();
+            services.AddScoped<IImageService, ImageManager>();
+            services.AddScoped<IAddressService, AddressManager>();
+            services.AddScoped<IContactService, ContactManager>();
+
+            services.AddScoped<IServiceDAL, EfServiceRepository>();
+            services.AddScoped<ITeamDAL, EfTeamRepository>();
+            services.AddScoped<IAnnouncementDAL, EfAnnouncementRepository>();
+            services.AddScoped<IImageDAL, EfImageRepository>();
+            services.AddScoped<IAddressDal, EfAddressRepository>();
+            services.AddScoped<IContactDAL, EfContactRepository>();
+            
+            services.AddDbContext<TarimContext>();
             services.AddControllersWithViews();
         }
 

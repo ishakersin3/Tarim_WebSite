@@ -1,0 +1,42 @@
+﻿@using EntityLayer
+@model Address
+@{
+    ViewData["Title"] = "CreateTeam";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Adres Güncelle</h4>
+            <form class="forms-sample" method="post">
+                <div class="form-group">
+                    <input type="hidden" asp-for="AddressId" />
+                    <label for="exampleInputName1">Açıklama 1</label>
+                    <input type="text" asp-for="Description1" class="form-control" placeholder="Açıklama 1">
+                    <span asp-validation-for="Description1" class="text-danger"></span>
+                    <br />
+                    <label for="exampleInputName1">Açıklama 2</label>
+                    <input type="text" asp-for="Description2" class="form-control" placeholder="Açıklama 2">
+                    <span asp-validation-for="Description2" class="text-danger"></span>
+                    <br />
+                    <label for="exampleInputName1">Açıklama 3</label>
+                    <input type="text" asp-for="Description3" class="form-control" placeholder="Açıklama 3">
+                    <span asp-validation-for="Description3" class="text-danger"></span>
+                    <br />
+                    <label for="exampleInputName1">Açıklama 4</label>
+                    <input type="text" asp-for="Description4" class="form-control" placeholder="Açıklama 4">
+                    <span asp-validation-for="Description4" class="text-danger"></span>
+                    <br />
+                    <label for="exampleInputName1">Harita Konumu</label>
+                    <input type="text" asp-for="MapInfo" class="form-control" placeholder="Harita Bilgisi">
+                    <br />
+                </div>           
+                <button type="submit" class="btn btn-outline-info">Kaydet</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+

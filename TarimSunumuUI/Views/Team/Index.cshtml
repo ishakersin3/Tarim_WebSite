@@ -1,0 +1,40 @@
+﻿@using EntityLayer
+@model List<Team>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Takım Arkadaşları</h4>
+        <div class="table-responsive">
+            <a href="/Team/CreateTeam" class="btn btn-outline-success">Yeni Takım Arkadaşı Ekle</a>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Id</th>
+                        <th>Ad</th>
+                        <th>Görev</th>
+                        <th>Sil</th>
+                        <th>Düzenle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="py-1"><img src="~/MajesticAdmin-Free-Bootstrap-Admin-Template-master/template/images/faces/face1.jpg" alt="image" /></td>
+                            <td>@item.TeamId</td>
+                            <td>@item.PersonName</td>
+                            <td>@item.Title</td>
+                            <td><a href="/Team/DeleteTeam/@item.TeamId" class="btn btn-outline-danger">Sil</a></td>
+                            <td><a href="/Team/UpdateTeam/@item.TeamId" class="btn btn-outline-success">Güncelle</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
