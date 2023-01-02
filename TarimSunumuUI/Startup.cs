@@ -34,6 +34,8 @@ namespace TarimSunumuUI
             services.AddScoped<IImageService, ImageManager>();
             services.AddScoped<IAddressService, AddressManager>();
             services.AddScoped<IContactService, ContactManager>();
+            services.AddScoped<ISocialMediaService, SocialMediaManager>();
+            services.AddScoped<IAboutService, AboutManager>();
 
             services.AddScoped<IServiceDAL, EfServiceRepository>();
             services.AddScoped<ITeamDAL, EfTeamRepository>();
@@ -41,7 +43,9 @@ namespace TarimSunumuUI
             services.AddScoped<IImageDAL, EfImageRepository>();
             services.AddScoped<IAddressDal, EfAddressRepository>();
             services.AddScoped<IContactDAL, EfContactRepository>();
-            
+            services.AddScoped<ISocialMediaDal, EfSocialMediaRepository>();
+            services.AddScoped<IAboutDal, EfAboutRepository>();
+ 
             services.AddDbContext<TarimContext>();
             services.AddControllersWithViews();
         }

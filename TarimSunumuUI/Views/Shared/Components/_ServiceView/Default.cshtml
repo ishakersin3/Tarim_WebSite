@@ -1,0 +1,53 @@
+﻿@using EntityLayer
+@model List<Service>
+
+<div class="sevices-w3layouts" id="services">
+    <div class="container">
+        <h3 class="tittle">Hizmetlerimiz</h3>
+        <p class="heading-btm-w3ls">4 Ayrı Hizmetimizi Siz Değerli Müşterilerimize Sunuyoruz.</p>
+        <div class="services-main">
+
+            <div class="col-md-3 sevices-w3layouts-grids wow fadeInUp animated" data-wow-delay=".5s">
+                <h5>@Model[0].Title</h5>
+                <p>@Model[0].Description</p>
+
+                <div class="sevices-w3layouts-img c1">
+                    <i class="@Model[0].İmageUrl" aria-hidden="true"></i>
+                    <p>@Model[0].Title</p>
+                </div>
+            </div>
+
+            <div class="col-md-3 sevices-w3layouts-grids sevices-w3layouts-mdl wow fadeInUp animated" data-wow-delay=".5s">
+                <h5>@Model[1].Title</h5>
+                <p>@Model[1].Description</p>
+
+                <div class="sevices-w3layouts-img c2">
+                    <i class="@Model[1].İmageUrl" aria-hidden="true"></i>
+                    <p>@Model[1].Title</p>
+                </div>
+            </div>
+
+            <div class="col-md-3 sevices-w3layouts-grids sevices-w3layouts-mdl1 wow fadeInUp animated" data-wow-delay=".5s">
+                <h5>@Model[2].Title</h5>
+                <p>@Model[2].Description</p>
+
+                <div class="sevices-w3layouts-img c3">
+                    <i class="@Model[2].İmageUrl" aria-hidden="true"></i>
+                    <p>@Model[2].Title</p>
+                </div>
+            </div>
+
+            <div class="col-md-3 sevices-w3layouts-grids wow fadeInUp animated" data-wow-delay=".5s">
+                <h5>@Model[3].Title</h5>
+                <p>@Model[3].Description</p>
+
+                <div class="sevices-w3layouts-img c4">
+                    <i class="@Model[3].İmageUrl" aria-hidden="true"></i>
+                    <p>@Model[3].Title</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>

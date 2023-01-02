@@ -1,0 +1,21 @@
+﻿@using EntityLayer
+@model Contact
+
+<div class="col-md-9 contact-middle">
+    <h2>Merhaba</h2>
+    <form action="/Default/SendMessage" method="post">
+        <div class="form-agileinfo">
+            <p>Adınız Soyadınız</p>
+            <input type="text" asp-for="Name" placeholder="Ad Soyad" required="" />
+            <p>Mail Adresiniz</p>
+            <input type="email" asp-for="Mail" placeholder="Mail" required="" />
+        </div>
+        <div class="form-agileits-w3layouts">
+            <p>Mesajınız</p>
+            <textarea asp-for="Message" placeholder="Mesaj" required=""></textarea>
+            <input type="submit" value="Mesajı Gönder"/>
+        </div>
+        <div class="clearfix"></div>
+
+    </form>
+</div>
